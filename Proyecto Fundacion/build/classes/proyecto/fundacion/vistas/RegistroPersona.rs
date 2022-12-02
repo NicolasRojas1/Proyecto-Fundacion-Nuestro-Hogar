@@ -1,0 +1,2 @@
+Proyecto.fundacion.vistas.RegistroPersona
+Proyecto_fundacion.vistas.RegistroPersona
