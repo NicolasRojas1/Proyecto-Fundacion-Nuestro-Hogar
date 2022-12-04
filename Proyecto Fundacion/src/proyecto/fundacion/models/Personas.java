@@ -1,5 +1,5 @@
 
-package Proyecto_fundacion.models;
+package proyecto.fundacion.models;
 
 import java.util.Date;
 

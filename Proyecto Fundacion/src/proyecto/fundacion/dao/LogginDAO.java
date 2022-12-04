@@ -1,6 +1,5 @@
-
-package Proyecto_fundacion.dao;
-import Proyecto_fundacion.models.Usuarios;
+package proyecto.fundacion.dao;
+import proyecto.fundacion.models.Usuarios;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
