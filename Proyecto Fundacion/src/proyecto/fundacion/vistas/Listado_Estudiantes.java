@@ -4,15 +4,17 @@
  */
 package proyecto.fundacion.vistas;
 
+import javax.swing.JOptionPane;
+import proyecto.fundacion.controller.PersonasController;
+
 /**
  *
  * @author USUARIO
  */
 public class Listado_Estudiantes extends javax.swing.JFrame {
 
-    /**
-     * Creates new form Listado_Estudiantes
-     */
+    PersonasController pcontroller = new PersonasController();
+
     public Listado_Estudiantes() {
         initComponents();
         this.setLocationRelativeTo(null);
@@ -34,17 +36,14 @@ public class Listado_Estudiantes extends javax.swing.JFrame {
         jPanel2 = new javax.swing.JPanel();
         jScrollPane2 = new javax.swing.JScrollPane();
         TablaListado = new javax.swing.JTable();
-        btn_IrPerCoord = new javax.swing.JButton();
-        BarraMorada = new javax.swing.JLabel();
         Busqueda_estudiante = new javax.swing.JTextField();
         btn_buscar = new javax.swing.JButton();
-        jButtonIrNotif = new javax.swing.JButton();
-        jPanel1 = new javax.swing.JPanel();
         jPanel3 = new javax.swing.JPanel();
-        btn_irPerAdm = new javax.swing.JButton();
+        BarraMorada = new javax.swing.JLabel();
+        campo_eliminar_persona = new javax.swing.JTextField();
+        EliminarPersona = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setPreferredSize(new java.awt.Dimension(1100, 600));
 
         jScrollPane1.setVerticalScrollBarPolicy(javax.swing.ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS);
         jScrollPane1.setViewportBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
@@ -76,28 +75,13 @@ public class Listado_Estudiantes extends javax.swing.JFrame {
         });
         jScrollPane2.setViewportView(TablaListado);
 
-        btn_IrPerCoord.setBackground(new java.awt.Color(204, 204, 204));
-        btn_IrPerCoord.setFont(new java.awt.Font("Roboto Light", 1, 14)); // NOI18N
-        btn_IrPerCoord.setText("IR A PERFIL COORD");
-        btn_IrPerCoord.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, null, new java.awt.Color(204, 204, 204), null, null));
-        btn_IrPerCoord.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                btn_IrPerCoordMouseClicked(evt);
-            }
-        });
-        btn_IrPerCoord.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btn_IrPerCoordActionPerformed(evt);
-            }
-        });
-
-        BarraMorada.setBackground(new java.awt.Color(255, 255, 255));
-        BarraMorada.setFont(new java.awt.Font("Roboto Light", 1, 18)); // NOI18N
-        BarraMorada.setText("  Lista de Estudiantes");
-        BarraMorada.setOpaque(true);
-
         Busqueda_estudiante.setFont(new java.awt.Font("Roboto Light", 1, 18)); // NOI18N
         Busqueda_estudiante.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        Busqueda_estudiante.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Busqueda_estudianteActionPerformed(evt);
+            }
+        });
 
         btn_buscar.setBackground(new java.awt.Color(204, 204, 204));
         btn_buscar.setFont(new java.awt.Font("Roboto Light", 1, 18)); // NOI18N
@@ -114,61 +98,41 @@ public class Listado_Estudiantes extends javax.swing.JFrame {
             }
         });
 
-        jButtonIrNotif.setBackground(new java.awt.Color(204, 204, 204));
-        jButtonIrNotif.setFont(new java.awt.Font("Roboto Light", 1, 14)); // NOI18N
-        jButtonIrNotif.setText("IR A NOTIFICACIONES");
-        jButtonIrNotif.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        jButtonIrNotif.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jButtonIrNotifMouseClicked(evt);
-            }
-        });
-        jButtonIrNotif.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButtonIrNotifActionPerformed(evt);
-            }
-        });
-
-        jPanel1.setBackground(new java.awt.Color(204, 255, 255));
-        jPanel1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 688, Short.MAX_VALUE)
-        );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 98, Short.MAX_VALUE)
-        );
-
         jPanel3.setBackground(new java.awt.Color(204, 204, 255));
         jPanel3.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+
+        BarraMorada.setBackground(new java.awt.Color(255, 255, 255));
+        BarraMorada.setFont(new java.awt.Font("Roboto Light", 1, 18)); // NOI18N
+        BarraMorada.setText("  Lista de Estudiantes");
+        BarraMorada.setOpaque(true);
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
         jPanel3Layout.setHorizontalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 388, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(BarraMorada, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(70, 70, 70))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 148, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
+                .addContainerGap(67, Short.MAX_VALUE)
+                .addComponent(BarraMorada, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(50, 50, 50))
         );
 
-        btn_irPerAdm.setBackground(new java.awt.Color(204, 204, 204));
-        btn_irPerAdm.setFont(new java.awt.Font("Roboto Light", 1, 14)); // NOI18N
-        btn_irPerAdm.setText("IR A PERFIL ADMIN");
-        btn_irPerAdm.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, null, new java.awt.Color(204, 204, 204), null, null));
-        btn_irPerAdm.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                btn_irPerAdmMouseClicked(evt);
+        campo_eliminar_persona.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                campo_eliminar_personaActionPerformed(evt);
             }
         });
-        btn_irPerAdm.addActionListener(new java.awt.event.ActionListener() {
+
+        EliminarPersona.setText("Eliminar");
+        EliminarPersona.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btn_irPerAdmActionPerformed(evt);
+                EliminarPersonaActionPerformed(evt);
             }
         });
 
@@ -177,46 +141,40 @@ public class Listado_Estudiantes extends javax.swing.JFrame {
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(BarraMorada, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)))
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(520, 520, 520)
-                .addComponent(Busqueda_estudiante, javax.swing.GroupLayout.PREFERRED_SIZE, 310, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(20, 20, 20)
-                .addComponent(btn_buscar, javax.swing.GroupLayout.PREFERRED_SIZE, 190, javax.swing.GroupLayout.PREFERRED_SIZE))
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(40, 40, 40)
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 1000, javax.swing.GroupLayout.PREFERRED_SIZE))
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(460, 460, 460)
-                .addComponent(btn_irPerAdm, javax.swing.GroupLayout.PREFERRED_SIZE, 190, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(10, 10, 10)
-                .addComponent(btn_IrPerCoord, javax.swing.GroupLayout.PREFERRED_SIZE, 190, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(10, 10, 10)
-                .addComponent(jButtonIrNotif, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGap(40, 40, 40)
+                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 1000, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGap(528, 528, 528)
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(campo_eliminar_persona)
+                            .addComponent(Busqueda_estudiante, javax.swing.GroupLayout.DEFAULT_SIZE, 310, Short.MAX_VALUE))
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel2Layout.createSequentialGroup()
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(btn_buscar, javax.swing.GroupLayout.PREFERRED_SIZE, 190, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                                .addGap(21, 21, 21)
+                                .addComponent(EliminarPersona, javax.swing.GroupLayout.PREFERRED_SIZE, 181, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(10, 10, 10)
-                        .addComponent(BarraMorada, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(70, 70, 70)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(Busqueda_estudiante, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btn_buscar, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(30, 30, 30)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btn_buscar)
+                    .addComponent(Busqueda_estudiante, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(25, 25, 25)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(campo_eliminar_persona, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(EliminarPersona))
+                .addGap(53, 53, 53)
                 .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(10, 10, 10)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(btn_irPerAdm, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btn_IrPerCoord, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButtonIrNotif, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap())
         );
 
         jScrollPane1.setViewportView(jPanel2);
@@ -225,26 +183,21 @@ public class Listado_Estudiantes extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 1100, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jScrollPane1)
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 1120, Short.MAX_VALUE)
+            .addComponent(jScrollPane1)
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void btn_IrPerCoordMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_IrPerCoordMouseClicked
-        this.dispose();
-        PerfilAdministrador abrir = new PerfilAdministrador();
-        abrir.setVisible(true);
-        this.setVisible(false);
-
-    }//GEN-LAST:event_btn_IrPerCoordMouseClicked
-
     private void btn_buscarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_buscarMouseClicked
-       this.dispose();
+        this.dispose();
         inscripciones abrir = new inscripciones();
         abrir.setVisible(true);
         this.setVisible(false);
@@ -254,45 +207,42 @@ public class Listado_Estudiantes extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_btn_buscarActionPerformed
 
-    private void jButtonIrNotifMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButtonIrNotifMouseClicked
+    private void Busqueda_estudianteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Busqueda_estudianteActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButtonIrNotifMouseClicked
+    }//GEN-LAST:event_Busqueda_estudianteActionPerformed
 
-    private void jButtonIrNotifActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonIrNotifActionPerformed
-        this.dispose();
-        Notificaciones abrir = new Notificaciones();
-        abrir.setVisible(true);
-        this.setVisible(false);
-    }//GEN-LAST:event_jButtonIrNotifActionPerformed
-
-    private void btn_irPerAdmMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_irPerAdmMouseClicked
+    private void campo_eliminar_personaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_campo_eliminar_personaActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_btn_irPerAdmMouseClicked
+    }//GEN-LAST:event_campo_eliminar_personaActionPerformed
 
-    private void btn_IrPerCoordActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_IrPerCoordActionPerformed
-        this.dispose();
-        PerfilCoordinador abrir = new PerfilCoordinador();
-        abrir.setVisible(true);
-        this.setVisible(false);
-    }//GEN-LAST:event_btn_IrPerCoordActionPerformed
+    private void EliminarPersonaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EliminarPersonaActionPerformed
+        
+        //realizo validaciones
+        String id = campo_eliminar_persona.getText();
+        int confirmacion = JOptionPane.showConfirmDialog(null, "¿Esta seguro de eliminar el estudiante con el id: " + id + "?", "ATENCION", JOptionPane.YES_NO_OPTION, JOptionPane.WARNING_MESSAGE);
 
-    private void btn_irPerAdmActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_irPerAdmActionPerformed
-        this.dispose();
-        PerfilAdministrador abrir = new PerfilAdministrador();
-        abrir.setVisible(true);
-        this.setVisible(false);
-    }//GEN-LAST:event_btn_irPerAdmActionPerformed
+        if (confirmacion == 0) {
+
+            boolean respuesta = pcontroller.eliminar(id);
+
+            if (respuesta) {
+
+                JOptionPane.showMessageDialog(rootPane, "Se elimino el estudiante con exito con el documento: " + id, "INFORMACION", JOptionPane.INFORMATION_MESSAGE);
+                campo_eliminar_persona.setText("");
+            } else {
+                JOptionPane.showMessageDialog(rootPane, "No se pudo completar la operacion", "ERROR", JOptionPane.ERROR_MESSAGE);
+            }
+        }
+    }//GEN-LAST:event_EliminarPersonaActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel BarraMorada;
     public javax.swing.JTextField Busqueda_estudiante;
+    private javax.swing.JButton EliminarPersona;
     public javax.swing.JTable TablaListado;
-    public javax.swing.JButton btn_IrPerCoord;
     private javax.swing.JButton btn_buscar;
-    public javax.swing.JButton btn_irPerAdm;
-    private javax.swing.JButton jButtonIrNotif;
-    private javax.swing.JPanel jPanel1;
+    private javax.swing.JTextField campo_eliminar_persona;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JScrollPane jScrollPane1;

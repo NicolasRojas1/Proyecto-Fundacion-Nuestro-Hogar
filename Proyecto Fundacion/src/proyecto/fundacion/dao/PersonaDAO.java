@@ -1,7 +1,6 @@
+package proyecto.fundacion.dao;
 
-package Proyecto_fundacion.dao;
-
-import Proyecto_fundacion.models.Personas;
+import proyecto.fundacion.models.Personas;
 import java.sql.*;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -12,6 +11,36 @@ public class PersonaDAO {
     //Creo la constante para conocer los errores
     private static final Logger console = Logger.getLogger(PersonaDAO.class.getName());
     
+    public boolean Delete (String id) {
+        
+        Connection con = new Conexion().getConnection();
+        PreparedStatement ps = null; 
+        ResultSet rs = null;
+        
+        String sql = "DELETE FROM personas WHERE PerNumerodeDocumento = ?";
+        
+        try {
+            
+            ps = con.prepareStatement(sql);
+            ps.setString(1, id); //envio la posicion y el parametro a usar
+            ps.execute();
+            return true;
+        } catch (SQLException ex) {
+            
+            JOptionPane.showMessageDialog(null, ex.getMessage(), "ERROR", JOptionPane.ERROR_MESSAGE);
+            return false;
+        } finally {
+            
+            try { 
+                ps.close();
+                console.info("Se cerró la conexion \n");
+                
+            } catch (SQLException ex) {
+                
+                console.log(Level.SEVERE, ex.getMessage());
+            }
+        }    
+    }
     
     public boolean Modify(Personas personas){
         int llave_foranea = 0;

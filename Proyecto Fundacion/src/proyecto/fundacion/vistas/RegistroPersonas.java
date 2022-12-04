@@ -4,9 +4,9 @@
  */
 package proyecto.fundacion.vistas;
 
-import Proyecto_fundacion.models.Personas;
+import proyecto.fundacion.models.Personas;
 import java.text.SimpleDateFormat;
-import Proyecto_fundacion.controller.PersonasController;
+import proyecto.fundacion.controller.PersonasController;
 import javax.swing.JButton;
 import javax.swing.JOptionPane;
 

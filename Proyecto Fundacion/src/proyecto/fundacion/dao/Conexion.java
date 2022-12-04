@@ -1,4 +1,4 @@
-package Proyecto_fundacion.dao;
+package proyecto.fundacion.dao;
 
 import java.sql.*;
 import java.util.logging.Level;

@@ -1,6 +1,6 @@
-package Proyecto_fundacion.dao;
+package proyecto.fundacion.dao;
 
-import Proyecto_fundacion.models.Estudiantes;
+import proyecto.fundacion.models.Estudiantes;
 import java.sql.*;
 import java.util.logging.*;
 import javax.swing.JOptionPane;

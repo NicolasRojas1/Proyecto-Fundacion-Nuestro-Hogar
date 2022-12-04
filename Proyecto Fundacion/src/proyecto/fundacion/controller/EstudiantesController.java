@@ -1,8 +1,8 @@
 
-package Proyecto_fundacion.controller;
+package proyecto.fundacion.controller;
 
-import Proyecto_fundacion.models.Estudiantes;
-import Proyecto_fundacion.dao.EstudianteDAO;
+import proyecto.fundacion.models.Estudiantes;
+import proyecto.fundacion.dao.EstudianteDAO;
 import java.util.*;
 import java.util.logging.Logger;
 
