@@ -2,11 +2,14 @@ package proyecto.fundacion.dao;
 
 import proyecto.fundacion.models.Personas;
 import java.sql.*;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 
 public class PersonaDAO {
+    
     
     //Creo la constante para conocer los errores
     private static final Logger console = Logger.getLogger(PersonaDAO.class.getName());
@@ -191,4 +194,66 @@ public class PersonaDAO {
         }   
         return llave_primaria_pesonas;
     }
+    public List Listar() {
+
+        List<Personas> listaPer = new ArrayList();
+        String sql = "SELECT * FROM Personas";
+
+        try {
+        Connection con = new Conexion().getConnection();
+        PreparedStatement ps = con.prepareStatement(sql); 
+        ResultSet rs = ps.executeQuery();
+            
+
+            while (rs.next()) {
+
+                Personas Per = new Personas();
+                Per.setPerId(rs.getInt(1));
+                Per.setPerNombres(rs.getString(5));
+                Per.setPerApellidos(rs.getString(6));
+                Per.setPerTipodeDocumento(rs.getString(2));
+                Per.setPerNumerodeDocumento(rs.getString(3));
+                Per.setPerEdad(rs.getString(9));
+                
+                listaPer.add(Per);
+            }
+
+        } catch (SQLException e) {
+            JOptionPane.showMessageDialog(null, e.getMessage(), "ERROR", JOptionPane.ERROR_MESSAGE);
+        }
+        return listaPer;
+
+        }
+    public Personas BuscarPersonas(String PerNombres) {
+
+        Personas per = new Personas();
+
+        String sql = "SELECT * FROM personas WHERE PerNombres=?";
+
+        try {
+        Connection conn = new Conexion().getConnection();
+        PreparedStatement ps = conn.prepareStatement(sql); 
+        ps.setString(1, PerNombres);
+        ResultSet rs = ps.executeQuery();
+
+            if (rs.next()) {
+
+               Personas Per = new Personas();
+                Per.setPerId(rs.getInt(1));
+                Per.setPerNombres(rs.getString(5));
+                Per.setPerApellidos(rs.getString(6));
+                Per.setPerTipodeDocumento(rs.getString(2));
+                Per.setPerNumerodeDocumento(rs.getString(3));
+                Per.setPerEdad(rs.getString(9));
+
+            }
+
+        } catch (SQLException e) {
+            JOptionPane.showMessageDialog(null, e.getMessage(), "ERROR", JOptionPane.ERROR_MESSAGE);
+        }
+        return per;
+
+    }
+
+
 }
