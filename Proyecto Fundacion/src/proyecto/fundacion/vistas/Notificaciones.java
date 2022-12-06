@@ -31,8 +31,6 @@ public class Notificaciones extends javax.swing.JFrame {
 
         jScrollPane1 = new javax.swing.JScrollPane();
         jPanel1 = new javax.swing.JPanel();
-        Notificaciones = new javax.swing.JLabel();
-        GenerarAlerta = new javax.swing.JTextField();
         PanelAsistencia = new javax.swing.JPanel();
         AlerAsis1 = new javax.swing.JLabel();
         NomEstud = new javax.swing.JLabel();
@@ -86,12 +84,11 @@ public class Notificaciones extends javax.swing.JFrame {
         jScrollPane5 = new javax.swing.JScrollPane();
         jTextArea3 = new javax.swing.JTextArea();
         AlertEstudian1 = new javax.swing.JLabel();
-        BotSiguiPerAdm1 = new javax.swing.JButton();
-        BotSiguiPerEst = new javax.swing.JButton();
-        SiguieNot = new javax.swing.JButton();
         AntNot = new javax.swing.JButton();
         jPanel4 = new javax.swing.JPanel();
-        jPanel5 = new javax.swing.JPanel();
+        Notificaciones = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
+        GenerarAlerta = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -101,23 +98,6 @@ public class Notificaciones extends javax.swing.JFrame {
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
         jPanel1.setMinimumSize(new java.awt.Dimension(1100, 900));
         jPanel1.setPreferredSize(new java.awt.Dimension(1100, 900));
-
-        Notificaciones.setFont(new java.awt.Font("Roboto Medium", 0, 18)); // NOI18N
-        Notificaciones.setText("Notificaciones");
-
-        GenerarAlerta.setFont(new java.awt.Font("Roboto Light", 1, 18)); // NOI18N
-        GenerarAlerta.setText("GENERAR ALERTA");
-        GenerarAlerta.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        GenerarAlerta.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                GenerarAlertaMouseClicked(evt);
-            }
-        });
-        GenerarAlerta.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                GenerarAlertaActionPerformed(evt);
-            }
-        });
 
         PanelAsistencia.setBorder(new javax.swing.border.MatteBorder(null));
 
@@ -162,7 +142,7 @@ public class Notificaciones extends javax.swing.JFrame {
                         .addComponent(InasisA, javax.swing.GroupLayout.PREFERRED_SIZE, 210, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(EstudianteAler, javax.swing.GroupLayout.DEFAULT_SIZE, 269, Short.MAX_VALUE)
                         .addComponent(InasistenciaClaseDe)))
-                .addContainerGap(13, Short.MAX_VALUE))
+                .addContainerGap(27, Short.MAX_VALUE))
         );
         PanelAsistenciaLayout.setVerticalGroup(
             PanelAsistenciaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -218,7 +198,7 @@ public class Notificaciones extends javax.swing.JFrame {
                                 .addGroup(PanelPsico1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                     .addComponent(EstudianteAsistencia2)
                                     .addComponent(AlerInasistencia2, javax.swing.GroupLayout.DEFAULT_SIZE, 272, Short.MAX_VALUE))))))
-                .addContainerGap(20, Short.MAX_VALUE))
+                .addContainerGap(28, Short.MAX_VALUE))
         );
         PanelPsico1Layout.setVerticalGroup(
             PanelPsico1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -242,7 +222,7 @@ public class Notificaciones extends javax.swing.JFrame {
         Hace5minPsico.setFont(new java.awt.Font("Roboto Light", 1, 12)); // NOI18N
         Hace5minPsico.setText("Hace 5 min");
         PanelPsico.add(Hace5minPsico);
-        Hace5minPsico.setBounds(180, 10, 78, 22);
+        Hace5minPsico.setBounds(180, 10, 70, 21);
 
         EstudianteAlerPsico.setFont(new java.awt.Font("Roboto Medium", 0, 12)); // NOI18N
         EstudianteAlerPsico.addActionListener(new java.awt.event.ActionListener() {
@@ -251,19 +231,19 @@ public class Notificaciones extends javax.swing.JFrame {
             }
         });
         PanelPsico.add(EstudianteAlerPsico);
-        EstudianteAlerPsico.setBounds(7, 57, 270, 22);
+        EstudianteAlerPsico.setBounds(7, 57, 270, 21);
 
         NomEst.setFont(new java.awt.Font("Roboto Light", 1, 12)); // NOI18N
         NomEst.setText("Estudiante ");
         PanelPsico.add(NomEst);
-        NomEst.setBounds(7, 36, 185, 16);
+        NomEst.setBounds(7, 36, 185, 15);
         PanelPsico.add(InasistenciaPsico);
         InasistenciaPsico.setBounds(10, 110, 270, 22);
 
         AlerPsico.setFont(new java.awt.Font("Roboto Light", 1, 14)); // NOI18N
         AlerPsico.setText("Alerta - Psicologìa");
         PanelPsico.add(AlerPsico);
-        AlerPsico.setBounds(10, 10, 185, 19);
+        AlerPsico.setBounds(10, 10, 185, 17);
 
         jTextArea4.setColumns(20);
         jTextArea4.setRows(5);
@@ -275,7 +255,7 @@ public class Notificaciones extends javax.swing.JFrame {
         GenerPor.setFont(new java.awt.Font("Roboto Light", 1, 12)); // NOI18N
         GenerPor.setText("Generada Por:");
         PanelPsico.add(GenerPor);
-        GenerPor.setBounds(10, 90, 81, 16);
+        GenerPor.setBounds(10, 90, 79, 15);
 
         jPanel2.setBorder(new javax.swing.border.MatteBorder(null));
         jPanel2.setLayout(null);
@@ -283,12 +263,12 @@ public class Notificaciones extends javax.swing.JFrame {
         Alerta.setFont(new java.awt.Font("Roboto Light", 1, 14)); // NOI18N
         Alerta.setText("Alerta");
         jPanel2.add(Alerta);
-        Alerta.setBounds(20, 10, 41, 19);
+        Alerta.setBounds(20, 10, 40, 17);
 
         TipoDeAlerta.setFont(new java.awt.Font("Roboto Light", 1, 12)); // NOI18N
         TipoDeAlerta.setText("Tipo de Alerta:");
         jPanel2.add(TipoDeAlerta);
-        TipoDeAlerta.setBounds(21, 45, 81, 16);
+        TipoDeAlerta.setBounds(21, 45, 81, 15);
 
         AsistenciaAlert.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Asistencia" }));
         jPanel2.add(AsistenciaAlert);
@@ -297,23 +277,23 @@ public class Notificaciones extends javax.swing.JFrame {
         GeneradaPor.setFont(new java.awt.Font("Roboto Light", 1, 12)); // NOI18N
         GeneradaPor.setText("Generada Por:");
         jPanel2.add(GeneradaPor);
-        GeneradaPor.setBounds(20, 70, 81, 20);
+        GeneradaPor.setBounds(20, 70, 79, 20);
 
         jPanel2.add(AsistenciaAler1);
-        AsistenciaAler1.setBounds(125, 69, 160, 22);
+        AsistenciaAler1.setBounds(125, 69, 160, 24);
 
         AlertEstudian3.setFont(new java.awt.Font("Roboto Light", 1, 12)); // NOI18N
         AlertEstudian3.setText("Estudiante");
         jPanel2.add(AlertEstudian3);
-        AlertEstudian3.setBounds(20, 100, 60, 16);
+        AlertEstudian3.setBounds(20, 100, 61, 15);
 
         jPanel2.add(EstudianteAlerta);
-        EstudianteAlerta.setBounds(125, 97, 160, 22);
+        EstudianteAlerta.setBounds(125, 97, 160, 24);
 
         Observacion.setFont(new java.awt.Font("Roboto Light", 1, 12)); // NOI18N
         Observacion.setText("Observaciones");
         jPanel2.add(Observacion);
-        Observacion.setBounds(20, 140, 86, 16);
+        Observacion.setBounds(20, 140, 83, 15);
 
         jTextArea1.setColumns(20);
         jTextArea1.setRows(5);
@@ -329,19 +309,19 @@ public class Notificaciones extends javax.swing.JFrame {
         TipoDeAlerta1.setFont(new java.awt.Font("Roboto Light", 1, 12)); // NOI18N
         TipoDeAlerta1.setText("Tipo de Alerta:");
         jPanel3.add(TipoDeAlerta1);
-        TipoDeAlerta1.setBounds(17, 43, 81, 16);
+        TipoDeAlerta1.setBounds(17, 43, 81, 15);
 
         AsistenciaAlert3.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Asistencia" }));
         jPanel3.add(AsistenciaAlert3);
-        AsistenciaAlert3.setBounds(121, 39, 220, 22);
+        AsistenciaAlert3.setBounds(121, 39, 170, 22);
 
         jPanel3.add(AsistenciaAlert2);
-        AsistenciaAlert2.setBounds(121, 67, 220, 22);
+        AsistenciaAlert2.setBounds(121, 67, 170, 24);
 
         Alerta1.setFont(new java.awt.Font("Roboto Light", 1, 14)); // NOI18N
         Alerta1.setText("Alerta");
         jPanel3.add(Alerta1);
-        Alerta1.setBounds(17, 7, 41, 19);
+        Alerta1.setBounds(17, 7, 40, 17);
 
         jTextArea2.setColumns(20);
         jTextArea2.setRows(5);
@@ -349,25 +329,25 @@ public class Notificaciones extends javax.swing.JFrame {
         jScrollPane3.setViewportView(jTextArea2);
 
         jPanel3.add(jScrollPane3);
-        jScrollPane3.setBounds(20, 160, 310, 150);
+        jScrollPane3.setBounds(20, 160, 270, 150);
 
         GeneradaPor1.setFont(new java.awt.Font("Roboto Light", 1, 12)); // NOI18N
         GeneradaPor1.setText("Generada Por:");
         jPanel3.add(GeneradaPor1);
-        GeneradaPor1.setBounds(20, 70, 81, 16);
+        GeneradaPor1.setBounds(20, 70, 79, 15);
 
         AlertEstudian2.setFont(new java.awt.Font("Roboto Light", 1, 12)); // NOI18N
         AlertEstudian2.setText("Estudiante");
         jPanel3.add(AlertEstudian2);
-        AlertEstudian2.setBounds(20, 100, 60, 16);
+        AlertEstudian2.setBounds(20, 100, 61, 15);
 
         jPanel3.add(EstudianteAlerta1);
-        EstudianteAlerta1.setBounds(120, 100, 220, 22);
+        EstudianteAlerta1.setBounds(120, 100, 170, 24);
 
         Observacion1.setFont(new java.awt.Font("Roboto Light", 1, 12)); // NOI18N
         Observacion1.setText("Observaciones");
         jPanel3.add(Observacion1);
-        Observacion1.setBounds(20, 140, 86, 16);
+        Observacion1.setBounds(20, 140, 83, 15);
 
         PanelPsico2.setBorder(new javax.swing.border.MatteBorder(null));
         PanelPsico2.setLayout(null);
@@ -375,7 +355,7 @@ public class Notificaciones extends javax.swing.JFrame {
         Hace5minPsico1.setFont(new java.awt.Font("Roboto Light", 1, 12)); // NOI18N
         Hace5minPsico1.setText("Hace 5 min");
         PanelPsico2.add(Hace5minPsico1);
-        Hace5minPsico1.setBounds(193, 7, 78, 22);
+        Hace5minPsico1.setBounds(193, 7, 70, 21);
 
         EstudianteAlerPsico1.setFont(new java.awt.Font("Roboto Medium", 0, 12)); // NOI18N
         EstudianteAlerPsico1.addActionListener(new java.awt.event.ActionListener() {
@@ -384,19 +364,19 @@ public class Notificaciones extends javax.swing.JFrame {
             }
         });
         PanelPsico2.add(EstudianteAlerPsico1);
-        EstudianteAlerPsico1.setBounds(7, 57, 270, 22);
+        EstudianteAlerPsico1.setBounds(10, 60, 270, 21);
 
         jLabel10.setFont(new java.awt.Font("Roboto Light", 1, 12)); // NOI18N
         jLabel10.setText("Estudiante ");
         PanelPsico2.add(jLabel10);
-        jLabel10.setBounds(7, 36, 185, 16);
+        jLabel10.setBounds(7, 36, 185, 15);
         PanelPsico2.add(InasistenciaPsico1);
         InasistenciaPsico1.setBounds(7, 109, 270, 22);
 
         AlePsicol.setFont(new java.awt.Font("Roboto Light", 1, 14)); // NOI18N
         AlePsicol.setText("Alerta - Psicologìa");
         PanelPsico2.add(AlePsicol);
-        AlePsicol.setBounds(10, 10, 185, 19);
+        AlePsicol.setBounds(10, 10, 185, 17);
 
         jTextArea3.setColumns(20);
         jTextArea3.setRows(5);
@@ -408,57 +388,13 @@ public class Notificaciones extends javax.swing.JFrame {
         AlertEstudian1.setFont(new java.awt.Font("Roboto Light", 1, 12)); // NOI18N
         AlertEstudian1.setText("Generada Por:");
         PanelPsico2.add(AlertEstudian1);
-        AlertEstudian1.setBounds(10, 90, 81, 16);
+        AlertEstudian1.setBounds(10, 90, 79, 15);
 
-        BotSiguiPerAdm1.setBackground(new java.awt.Color(204, 204, 204));
-        BotSiguiPerAdm1.setFont(new java.awt.Font("Roboto Light", 1, 14)); // NOI18N
-        BotSiguiPerAdm1.setText("PERFIL COORDINADOR");
-        BotSiguiPerAdm1.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        BotSiguiPerAdm1.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                BotSiguiPerAdm1MouseClicked(evt);
-            }
-        });
-        BotSiguiPerAdm1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                BotSiguiPerAdm1ActionPerformed(evt);
-            }
-        });
-
-        BotSiguiPerEst.setBackground(new java.awt.Color(204, 204, 204));
-        BotSiguiPerEst.setFont(new java.awt.Font("Roboto Light", 1, 14)); // NOI18N
-        BotSiguiPerEst.setText("      PERFIL PROFESOR");
-        BotSiguiPerEst.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        BotSiguiPerEst.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                BotSiguiPerEstMouseClicked(evt);
-            }
-        });
-        BotSiguiPerEst.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                BotSiguiPerEstActionPerformed(evt);
-            }
-        });
-
-        SiguieNot.setBackground(new java.awt.Color(204, 204, 204));
-        SiguieNot.setFont(new java.awt.Font("Roboto Light", 1, 14)); // NOI18N
-        SiguieNot.setText("PSICOLOGIA");
-        SiguieNot.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        SiguieNot.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                SiguieNotMouseClicked(evt);
-            }
-        });
-        SiguieNot.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                SiguieNotActionPerformed(evt);
-            }
-        });
-
-        AntNot.setBackground(new java.awt.Color(204, 204, 204));
-        AntNot.setFont(new java.awt.Font("Roboto Light", 1, 14)); // NOI18N
-        AntNot.setText("ANTERIOR");
-        AntNot.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        AntNot.setBackground(new java.awt.Color(255, 255, 255));
+        AntNot.setFont(new java.awt.Font("Lucida Fax", 1, 14)); // NOI18N
+        AntNot.setIcon(new javax.swing.ImageIcon(getClass().getResource("/proyecto/fundacion/imagenes/icons8-izquierda-32.png"))); // NOI18N
+        AntNot.setText("Volver");
+        AntNot.setBorder(null);
         AntNot.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 AntNotActionPerformed(evt);
@@ -468,102 +404,102 @@ public class Notificaciones extends javax.swing.JFrame {
         jPanel4.setBackground(new java.awt.Color(204, 204, 255));
         jPanel4.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
+        Notificaciones.setFont(new java.awt.Font("Lucida Fax", 1, 24)); // NOI18N
+        Notificaciones.setText("NOTIFICACIONES");
+
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/proyecto/fundacion/imagenes/logoFNH2.jpg"))); // NOI18N
+
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
         jPanel4.setLayout(jPanel4Layout);
         jPanel4Layout.setHorizontalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 418, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
+                .addGap(50, 50, 50)
+                .addComponent(jLabel1)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(Notificaciones)
+                .addGap(105, 105, 105))
         );
         jPanel4Layout.setVerticalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 128, Short.MAX_VALUE)
+            .addGroup(jPanel4Layout.createSequentialGroup()
+                .addGap(30, 30, 30)
+                .addComponent(jLabel1)
+                .addContainerGap(32, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(Notificaciones, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(53, 53, 53))
         );
 
-        jPanel5.setBackground(new java.awt.Color(204, 255, 255));
-        jPanel5.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-
-        javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
-        jPanel5.setLayout(jPanel5Layout);
-        jPanel5Layout.setHorizontalGroup(
-            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 678, Short.MAX_VALUE)
-        );
-        jPanel5Layout.setVerticalGroup(
-            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 58, Short.MAX_VALUE)
-        );
+        GenerarAlerta.setFont(new java.awt.Font("Lucida Fax", 1, 18)); // NOI18N
+        GenerarAlerta.setText("GENERAR ALERTA");
+        GenerarAlerta.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        GenerarAlerta.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                GenerarAlertaMouseClicked(evt);
+            }
+        });
+        GenerarAlerta.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                GenerarAlertaActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(GenerarAlerta, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(40, 40, 40))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(30, 30, 30)
-                        .addComponent(Notificaciones, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(AntNot, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(370, 370, 370)
-                        .addComponent(GenerarAlerta, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE))))
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(20, 20, 20)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(PanelAsistencia, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, 310, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(60, 60, 60)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(PanelPsico1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, 360, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(20, 20, 20)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(PanelPsico, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(PanelPsico2, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)))
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(10, 10, 10)
-                .addComponent(BotSiguiPerAdm1, javax.swing.GroupLayout.PREFERRED_SIZE, 260, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(30, 30, 30)
-                .addComponent(BotSiguiPerEst, javax.swing.GroupLayout.PREFERRED_SIZE, 270, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(30, 30, 30)
-                .addComponent(SiguieNot, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(50, 50, 50)
-                .addComponent(AntNot, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(20, 20, 20)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(PanelAsistencia, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGap(60, 60, 60)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(PanelPsico1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 47, Short.MAX_VALUE)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(PanelPsico, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(PanelPsico2, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addGap(49, 49, 49))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 0, 0)
-                        .addComponent(Notificaciones, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(10, 10, 10)
-                        .addComponent(GenerarAlerta, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(10, 10, 10)
+                .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(31, 31, 31)
+                .addComponent(GenerarAlerta, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(28, 28, 28)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(PanelPsico, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(10, 10, 10)
                         .addComponent(PanelPsico2, javax.swing.GroupLayout.PREFERRED_SIZE, 260, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(PanelAsistencia, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(10, 10, 10)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(PanelAsistencia, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(10, 10, 10)
-                                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, 330, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(PanelPsico1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(10, 10, 10)
-                                .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, 330, javax.swing.GroupLayout.PREFERRED_SIZE)))))
-                .addGap(40, 40, 40)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(BotSiguiPerAdm1, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(BotSiguiPerEst, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(SiguieNot, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(AntNot, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, 330, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(PanelPsico1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(10, 10, 10)
+                        .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, 330, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(33, 33, 33)
+                .addComponent(AntNot, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
         );
 
         jScrollPane1.setViewportView(jPanel1);
@@ -572,11 +508,11 @@ public class Notificaciones extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 1112, Short.MAX_VALUE)
+            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 1109, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 900, Short.MAX_VALUE)
+            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 866, Short.MAX_VALUE)
         );
 
         pack();
@@ -610,45 +546,6 @@ public class Notificaciones extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_EstudianteAlerPsico1ActionPerformed
 
-    private void BotSiguiPerAdm1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BotSiguiPerAdm1MouseClicked
-        // TODO add your handling code here:
-    }//GEN-LAST:event_BotSiguiPerAdm1MouseClicked
-
-    private void BotSiguiPerAdm1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotSiguiPerAdm1ActionPerformed
-        this.dispose();
-        PerfilCoordinador abrir = new PerfilCoordinador();
-        abrir.setVisible(true);
-        this.setVisible(false);
-    }//GEN-LAST:event_BotSiguiPerAdm1ActionPerformed
-
-    private void BotSiguiPerEstMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BotSiguiPerEstMouseClicked
-        this.dispose();
-        PerfilCoordinador abrir = new PerfilCoordinador();
-        abrir.setVisible(true);
-        this.setVisible(false);
-    }//GEN-LAST:event_BotSiguiPerEstMouseClicked
-
-    private void BotSiguiPerEstActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotSiguiPerEstActionPerformed
-        this.dispose();
-        perfil_profesor abrir = new perfil_profesor();
-        abrir.setVisible(true);
-        this.setVisible(false);
-    }//GEN-LAST:event_BotSiguiPerEstActionPerformed
-
-    private void SiguieNotMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_SiguieNotMouseClicked
-        this.dispose();
-        Perfil_estudiante inscrip = new Perfil_estudiante();
-        inscrip.setVisible(true);
-        this.setVisible(false);
-    }//GEN-LAST:event_SiguieNotMouseClicked
-
-    private void SiguieNotActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SiguieNotActionPerformed
-        this.dispose();
-        psicologia abrir = new psicologia();
-        abrir.setVisible(true);
-        this.setVisible(false);
-    }//GEN-LAST:event_SiguieNotActionPerformed
-
     private void AntNotActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AntNotActionPerformed
         this.dispose();
         PerfilAdministrador regr = new PerfilAdministrador();
@@ -672,8 +569,6 @@ public class Notificaciones extends javax.swing.JFrame {
     private javax.swing.JComboBox<String> AsistenciaAlert;
     private javax.swing.JComboBox<String> AsistenciaAlert2;
     private javax.swing.JComboBox<String> AsistenciaAlert3;
-    private javax.swing.JButton BotSiguiPerAdm1;
-    private javax.swing.JButton BotSiguiPerEst;
     private javax.swing.JTextField EstudianteAler;
     private javax.swing.JTextField EstudianteAlerPsico;
     private javax.swing.JTextField EstudianteAlerPsico1;
@@ -703,15 +598,14 @@ public class Notificaciones extends javax.swing.JFrame {
     private javax.swing.JPanel PanelPsico;
     private javax.swing.JPanel PanelPsico1;
     private javax.swing.JPanel PanelPsico2;
-    private javax.swing.JButton SiguieNot;
     private javax.swing.JLabel TipoDeAlerta;
     private javax.swing.JLabel TipoDeAlerta1;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
-    private javax.swing.JPanel jPanel5;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;

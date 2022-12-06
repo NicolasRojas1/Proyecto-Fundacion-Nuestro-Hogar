@@ -12,6 +12,7 @@ public class Loggin extends javax.swing.JFrame {
         setVisible(true);
         setLocationRelativeTo(null);
         setTitle("USUARIO Y CONTRASEÑA");
+        this.dispose();
     }
 
     /**
@@ -24,6 +25,7 @@ public class Loggin extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanelBordeImagen = new javax.swing.JPanel();
+        jLabel2 = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
         campo_usuario = new javax.swing.JTextField();
         txt_usuario = new javax.swing.JLabel();
@@ -32,6 +34,7 @@ public class Loggin extends javax.swing.JFrame {
         jButtonIngresar = new javax.swing.JButton();
         jButtonOlvidoContraseña = new javax.swing.JButton();
         Mostar_Contraseña = new javax.swing.JCheckBox();
+        jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(255, 255, 255));
@@ -39,18 +42,27 @@ public class Loggin extends javax.swing.JFrame {
         setResizable(false);
 
         jPanelBordeImagen.setBackground(new java.awt.Color(204, 204, 255));
-        jPanelBordeImagen.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
+        jPanelBordeImagen.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
         jPanelBordeImagen.setPreferredSize(new java.awt.Dimension(620, 700));
+
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/proyecto/fundacion/imagenes/logo fundaciónNH_400x400.jpg"))); // NOI18N
+        jLabel2.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
 
         javax.swing.GroupLayout jPanelBordeImagenLayout = new javax.swing.GroupLayout(jPanelBordeImagen);
         jPanelBordeImagen.setLayout(jPanelBordeImagenLayout);
         jPanelBordeImagenLayout.setHorizontalGroup(
             jPanelBordeImagenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 616, Short.MAX_VALUE)
+            .addGroup(jPanelBordeImagenLayout.createSequentialGroup()
+                .addGap(103, 103, 103)
+                .addComponent(jLabel2)
+                .addContainerGap(113, Short.MAX_VALUE))
         );
         jPanelBordeImagenLayout.setVerticalGroup(
             jPanelBordeImagenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 696, Short.MAX_VALUE)
+            .addGroup(jPanelBordeImagenLayout.createSequentialGroup()
+                .addGap(138, 138, 138)
+                .addComponent(jLabel2)
+                .addContainerGap(158, Short.MAX_VALUE))
         );
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
@@ -65,19 +77,20 @@ public class Loggin extends javax.swing.JFrame {
             }
         });
 
-        txt_usuario.setFont(new java.awt.Font("Roboto Light", 1, 14)); // NOI18N
+        txt_usuario.setFont(new java.awt.Font("Lucida Fax", 1, 16)); // NOI18N
         txt_usuario.setText("USUARIO:");
 
         campo_contrasena.setFont(new java.awt.Font("Roboto Light", 1, 18)); // NOI18N
         campo_contrasena.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
 
-        txt_contraseña.setFont(new java.awt.Font("Roboto Light", 1, 14)); // NOI18N
+        txt_contraseña.setFont(new java.awt.Font("Lucida Fax", 1, 16)); // NOI18N
         txt_contraseña.setText("CONTRASEÑA:");
 
-        jButtonIngresar.setBackground(new java.awt.Color(204, 204, 204));
-        jButtonIngresar.setFont(new java.awt.Font("Roboto Light", 1, 14)); // NOI18N
+        jButtonIngresar.setBackground(new java.awt.Color(255, 255, 255));
+        jButtonIngresar.setFont(new java.awt.Font("Lucida Fax", 1, 14)); // NOI18N
+        jButtonIngresar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/proyecto/fundacion/imagenes/ingresar.png"))); // NOI18N
         jButtonIngresar.setText("INGRESAR");
-        jButtonIngresar.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        jButtonIngresar.setBorder(null);
         jButtonIngresar.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jButtonIngresarMouseClicked(evt);
@@ -89,22 +102,27 @@ public class Loggin extends javax.swing.JFrame {
             }
         });
 
-        jButtonOlvidoContraseña.setBackground(new java.awt.Color(204, 204, 204));
-        jButtonOlvidoContraseña.setFont(new java.awt.Font("Roboto Light", 1, 14)); // NOI18N
+        jButtonOlvidoContraseña.setBackground(new java.awt.Color(255, 255, 255));
+        jButtonOlvidoContraseña.setFont(new java.awt.Font("Lucida Fax", 2, 14)); // NOI18N
+        jButtonOlvidoContraseña.setIcon(new javax.swing.ImageIcon(getClass().getResource("/proyecto/fundacion/imagenes/pregunta.png"))); // NOI18N
         jButtonOlvidoContraseña.setText("Olvido su Contraseña?");
-        jButtonOlvidoContraseña.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        jButtonOlvidoContraseña.setBorder(null);
         jButtonOlvidoContraseña.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButtonOlvidoContraseñaActionPerformed(evt);
             }
         });
 
+        Mostar_Contraseña.setBackground(new java.awt.Color(255, 255, 255));
         Mostar_Contraseña.setText("Mostrar Contraseña");
         Mostar_Contraseña.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 Mostar_ContraseñaActionPerformed(evt);
             }
         });
+
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/proyecto/fundacion/imagenes/perfil-del-usuario (1).png"))); // NOI18N
+        jLabel1.setText("jLabel1");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -113,46 +131,45 @@ public class Loggin extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(59, 59, 59)
-                        .addComponent(txt_usuario, javax.swing.GroupLayout.PREFERRED_SIZE, 210, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(52, 52, 52)
+                        .addComponent(jButtonIngresar, javax.swing.GroupLayout.PREFERRED_SIZE, 131, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(26, 26, 26)
+                        .addComponent(jButtonOlvidoContraseña, javax.swing.GroupLayout.PREFERRED_SIZE, 210, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(49, 49, 49)
-                        .addComponent(campo_usuario, javax.swing.GroupLayout.PREFERRED_SIZE, 360, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(campo_usuario, javax.swing.GroupLayout.PREFERRED_SIZE, 360, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txt_usuario, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(49, 49, 49)
-                        .addComponent(txt_contraseña, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(txt_contraseña, javax.swing.GroupLayout.PREFERRED_SIZE, 132, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(campo_contrasena, javax.swing.GroupLayout.PREFERRED_SIZE, 360, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(Mostar_Contraseña, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(49, 49, 49)
-                        .addComponent(campo_contrasena, javax.swing.GroupLayout.PREFERRED_SIZE, 360, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(139, 139, 139)
-                        .addComponent(jButtonIngresar, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(20, 20, 20)
-                        .addComponent(Mostar_Contraseña, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(209, 209, 209)
-                        .addComponent(jButtonOlvidoContraseña, javax.swing.GroupLayout.PREFERRED_SIZE, 210, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(9, 9, 9))
+                        .addGap(104, 104, 104)
+                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(93, 93, 93))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(289, 289, 289)
-                .addComponent(txt_usuario, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(10, 10, 10)
+                .addGap(50, 50, 50)
+                .addComponent(jLabel1)
+                .addGap(18, 18, 18)
+                .addComponent(txt_usuario, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(campo_usuario, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(20, 20, 20)
-                .addComponent(txt_contraseña, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, 0)
+                .addGap(27, 27, 27)
+                .addComponent(txt_contraseña, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(3, 3, 3)
                 .addComponent(campo_contrasena, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(10, 10, 10)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jButtonIngresar, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(10, 10, 10)
-                        .addComponent(Mostar_Contraseña)))
-                .addGap(30, 30, 30)
-                .addComponent(jButtonOlvidoContraseña))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(Mostar_Contraseña)
+                .addGap(36, 36, 36)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jButtonOlvidoContraseña)
+                    .addComponent(jButtonIngresar, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -177,8 +194,8 @@ public class Loggin extends javax.swing.JFrame {
       this.dispose();
       //PerfilAdministrador ingresar = new PerfilAdministrador();
       //PerfilAdministrador ingresar = new PerfilAdministrador();
-      RegistroPersonas ingresar = new RegistroPersonas();
-      ingresar.setVisible(true);        // TODO add your handling code here:
+      //RegistroPersonas ingresar = new RegistroPersonas();
+      //ingresar.setVisible(true);        // TODO add your handling code here:
     }//GEN-LAST:event_jButtonIngresarMouseClicked
 
     private void jButtonOlvidoContraseñaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonOlvidoContraseñaActionPerformed
@@ -217,6 +234,8 @@ public class Loggin extends javax.swing.JFrame {
     private javax.swing.JTextField campo_usuario;
     private javax.swing.JButton jButtonIngresar;
     private javax.swing.JButton jButtonOlvidoContraseña;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanelBordeImagen;
     private javax.swing.JLabel txt_contraseña;
