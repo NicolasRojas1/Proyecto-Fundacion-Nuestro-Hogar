@@ -17,6 +17,7 @@ public class configuraciones extends javax.swing.JFrame {
         setVisible(true);
         setLocationRelativeTo(null);
         setTitle("CONFIGURACIONES");
+        
     }
 
     /** This method is called from within the constructor to
@@ -47,6 +48,11 @@ public class configuraciones extends javax.swing.JFrame {
         jButton1.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jButton1MouseClicked(evt);
+            }
+        });
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
             }
         });
 
@@ -86,7 +92,12 @@ public class configuraciones extends javax.swing.JFrame {
     private void jButton1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton1MouseClicked
     PerfilAdministrador ingresar = new PerfilAdministrador();
       ingresar.setVisible(true);    // TODO add your handling code here:
+      this.dispose();
     }//GEN-LAST:event_jButton1MouseClicked
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        
+    }//GEN-LAST:event_jButton1ActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
